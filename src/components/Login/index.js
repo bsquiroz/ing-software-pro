@@ -52,10 +52,10 @@ export const Login = () => {
                             onChange={handleInputs}
                             value={email}
                         />
-                        <label htmlFor="name" class="form__label">
+                        <label htmlFor="name" className="form__label">
                             Correo
                         </label>
-                        <span class="form__line"></span>
+                        <span className="form__line"></span>
                     </div>
                     <div className="form__group">
                         <input
@@ -67,10 +67,10 @@ export const Login = () => {
                             onChange={handleInputs}
                             value={pass}
                         />
-                        <label htmlFor="name" class="form__label">
+                        <label htmlFor="name" className="form__label">
                             Contraseña
                         </label>
-                        <span class="form__line"></span>
+                        <span className="form__line"></span>
                     </div>
 
                     <button className="form__btn">Enviar</button>

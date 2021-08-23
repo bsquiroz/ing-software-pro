@@ -131,8 +131,8 @@ export const Formulario = () => {
                                 type="email"
                                 className="form__input"
                                 placeholder=" "
-                                id="nameUser"
-                                name="nameUser"
+                                id="email"
+                                name="email"
                                 onChange={handleInputs}
                                 value={email}
                             />
@@ -221,7 +221,7 @@ export const Formulario = () => {
                         <div>
                             <input
                                 type="submit"
-                                className="btn-confirm btn-form"
+                                className="btn-confirm"
                                 value="Enviar postulacion"
                             />
                         </div>
