@@ -44,7 +44,7 @@ export const Login = () => {
                 <form className="form__container" onSubmit={handleSubmit}>
                     <div className="form__group">
                         <input
-                            type="text"
+                            type="email"
                             name="email"
                             id="email"
                             placeholder=" "
