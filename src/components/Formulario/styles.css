@@ -1,0 +1,230 @@
+.formulario {
+    padding-top: 3em;
+}
+
+.formulario__title {
+    margin: 1em 0;
+}
+
+.formulario__title h2 {
+    text-align: center;
+}
+
+.formulario__title h2 span {
+    color: var(--morado-claro);
+}
+
+.formulario__title_form {
+    color: var(--morado-claro);
+}
+
+.btn-confirm {
+    display: block;
+    padding: 10px 20px;
+    background-color: var(--morado-oscuro);
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: transform 0.5s;
+    border: none;
+}
+
+.btn-form {
+    padding: 20px 40px;
+    font-size: 1.5em;
+}
+
+.btn-confirm:active {
+    transform: scale(0.9);
+}
+
+.formulario__boxBody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.formulario_boxInfo {
+    width: 400px;
+}
+
+.formulario_boxImg {
+    width: 400px;
+}
+
+.formulario_boxImg img {
+    width: 100%;
+}
+
+/* FORMULARIOOOOO */
+
+.form__container {
+    margin-top: 3em;
+    display: grid;
+    gap: 2.5em;
+}
+
+.title__section {
+    color: var(--morado-claro);
+    margin-bottom: 0.5em;
+}
+
+/* Inputs normales */
+
+.form__group {
+    position: relative;
+    --color: var(--morado-claro);
+}
+
+.form__input {
+    width: 100%;
+    background-color: none;
+    color: var(--morado-claro);
+    font-size: 1rem;
+    padding: 0.6em 0.3em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color);
+    font-family: "Roboto", sans-serif;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label {
+    transform: translateY(-12px) scale(0.9);
+    transform-origin: left top;
+    color: var(--morado-claro);
+    font-weight: bold;
+}
+
+.form__label {
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform 0.5s, color 0.3s;
+}
+
+.form__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--morado-claro);
+    transform: scale(0);
+    transform: left botton;
+    transition: transform 0.4s;
+}
+
+.form__input:focus ~ .form__line,
+.form__input:not(:placeholder-shown) ~ .form__line {
+    transform: scale(1);
+}
+
+/* inputs radios */
+
+.input__radio[type="radio"] {
+    display: none;
+}
+
+.label__radio {
+    position: relative;
+    color: var(--morado-claro);
+    font-family: sans-serif;
+    font-size: 16px;
+    border: 2px solid var(--morado-claro);
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+}
+
+.label__radio:before {
+    content: "";
+    height: 16px;
+    width: 16px;
+    border: 3px solid var(--morado-claro);
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.input__radio[type="radio"]:checked + .label__radio {
+    background-color: var(--morado-claro);
+    color: #fff;
+}
+
+.input__radio[type="radio"]:checked + .label__radio::before {
+    height: 16px;
+    width: 16px;
+    border: 3px solid #fff;
+    background-color: var(--morado-claro);
+}
+
+/* Estilos de select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: var(--morado-claro);
+    background-image: none;
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: "Open Sans", sans-serif;
+}
+select::-ms-expand {
+    display: none;
+}
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: var(--morado-claro);
+    overflow: hidden;
+    border-radius: 0.25em;
+}
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--morado-claro);
+    cursor: pointer;
+    pointer-events: none;
+    transition: 0.25s all ease;
+}
+.select:hover::after {
+    color: var(--morado-claro);
+}
+
+option:disabled {
+    color: #000;
+    font-weight: bold;
+}
+
+@media (max-width: 400px) {
+    .formulario_boxInfo {
+        width: 300px;
+    }
+
+    .formulario_boxImg {
+        width: 300px;
+    }
+}

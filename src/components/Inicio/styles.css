@@ -1,0 +1,42 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home h2 {
+    color: var(--morado-claro);
+    margin-bottom: 1em;
+}
+
+.home__text {
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.btn-confirm {
+    display: block;
+    padding: 10px 20px;
+    background-color: var(--morado-oscuro);
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: transform 0.5s;
+    border: none;
+}
+
+@media (max-width: 500px) {
+    .home {
+        flex-direction: column;
+    }
+
+    .home__img {
+        width: 50%;
+    }
+
+    .home__img img {
+        width: 100%;
+    }
+}
