@@ -6,17 +6,31 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const initial_values = {
-    nameUser: "",
+    nameFull: "",
     user: "",
     pass: "",
+    passReply: "",
     genero: "masculino",
     format: "",
     email: "",
+    dateBorn: "",
+    barrio: "",
+    dir: "",
 };
 
 export const Formulario = () => {
     const [valuesInput, setvaluesInput] = useState(initial_values);
-    const { nameUser, user, pass, format, email } = valuesInput;
+    const {
+        nameFull,
+        user,
+        pass,
+        format,
+        email,
+        passReply,
+        dateBorn,
+        barrio,
+        dir,
+    } = valuesInput;
     const [openForm, setOpenForm] = useState(false);
     const [currentCourse] = useSelector((state) => state.cursos.cursoActual);
 
@@ -44,24 +58,49 @@ export const Formulario = () => {
         e.preventDefault();
 
         if (
-            nameUser.trim() === "" ||
+            nameFull.trim() === "" ||
             user.trim() === "" ||
             pass.trim() === "" ||
             format.trim() === "" ||
-            email.trim() === ""
+            email.trim() === "" ||
+            passReply.trim() === "" ||
+            dateBorn.trim() === "" ||
+            barrio.trim() === "" ||
+            dir.trim() === ""
         ) {
             return Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Todos los campos son necesarios",
+                text: "Todos los campos son necesarios 😨",
+            });
+        }
+
+        if (pass.trim() !== passReply.trim()) {
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Las contraseñas no coinciden 😕",
+            });
+        }
+
+        if (pass.length < 8) {
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debes de ingresar mas de 8 caracteres 😕",
             });
         }
 
         await Swal.fire({
             icon: "success",
             title: "Muy bien",
-            text: "Dejanos revisar y pronto estaremos contigo",
+            text: "Dejanos revisar y pronto estaremos contigo 😎",
         });
+
+        valuesInput.idUser = Date.now();
+        valuesInput.cursoInscripto = name;
+
+        console.log(valuesInput);
 
         setvaluesInput(initial_values);
 
@@ -101,13 +140,28 @@ export const Formulario = () => {
                                 type="text"
                                 className="form__input"
                                 placeholder=" "
-                                id="nameUser"
-                                name="nameUser"
+                                id="nameFull"
+                                name="nameFull"
                                 onChange={handleInputs}
-                                value={nameUser}
+                                value={nameFull}
                             />
-                            <label htmlFor="name" className="form__label">
-                                Nombre
+                            <label htmlFor="nameFull" className="form__label">
+                                Nombres y apellidos
+                            </label>
+                            <span className="form__line"></span>
+                        </div>
+                        <div className="form__group">
+                            <input
+                                type="date"
+                                className="form__input"
+                                placeholder=" "
+                                id="dateBorn"
+                                name="dateBorn"
+                                onChange={handleInputs}
+                                value={dateBorn}
+                            />
+                            <label htmlFor="dateBorn" className="form__label">
+                                Fecha de nacimiento
                             </label>
                             <span className="form__line"></span>
                         </div>
@@ -137,7 +191,7 @@ export const Formulario = () => {
                                 value={email}
                             />
                             <label htmlFor="name" className="form__label">
-                                correo
+                                Correo
                             </label>
                             <span className="form__line"></span>
                         </div>
@@ -153,6 +207,21 @@ export const Formulario = () => {
                             />
                             <label htmlFor="pass" className="form__label">
                                 Contraseña
+                            </label>
+                            <span className="form__line"></span>
+                        </div>
+                        <div className="form__group">
+                            <input
+                                type="password"
+                                className="form__input"
+                                placeholder=" "
+                                id="passReply"
+                                name="passReply"
+                                onChange={handleInputs}
+                                value={passReply}
+                            />
+                            <label htmlFor="passReply" className="form__label">
+                                Por favor repita la contraseña
                             </label>
                             <span className="form__line"></span>
                         </div>
@@ -194,7 +263,7 @@ export const Formulario = () => {
                         </div>
                         <div className="select__container">
                             <h3 className="title__section">
-                                Seleciona tu comuna
+                                Selecciona tu comuna
                             </h3>
                             <div className="select">
                                 <select
@@ -210,13 +279,43 @@ export const Formulario = () => {
                                     >
                                         Escoge una de estas comunas
                                     </option>
-                                    <option value="1">Comuna 1</option>
-                                    <option value="2">Comuna 2</option>
-                                    <option value="3">Comuna 3</option>
-                                    <option value="4">Comuna 4</option>
-                                    <option value="5">Comuna 5</option>
+                                    <option value="Comuna 1">Comuna 1</option>
+                                    <option value="Comuna 2">Comuna 2</option>
+                                    <option value="Comuna 3">Comuna 3</option>
+                                    <option value="Comuna 4">Comuna 4</option>
+                                    <option value="Comuna 5">Comuna 5</option>
                                 </select>
                             </div>
+                        </div>
+                        <div className="form__group">
+                            <input
+                                type="text"
+                                className="form__input"
+                                placeholder=" "
+                                id="barrio"
+                                name="barrio"
+                                onChange={handleInputs}
+                                value={barrio}
+                            />
+                            <label htmlFor="barrio" className="form__label">
+                                Barrio
+                            </label>
+                            <span className="form__line"></span>
+                        </div>
+                        <div className="form__group">
+                            <input
+                                type="text"
+                                className="form__input"
+                                placeholder=" "
+                                id="dir"
+                                name="dir"
+                                onChange={handleInputs}
+                                value={dir}
+                            />
+                            <label htmlFor="dir" className="form__label">
+                                Direccion
+                            </label>
+                            <span className="form__line"></span>
                         </div>
                         <div>
                             <input

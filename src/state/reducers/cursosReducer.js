@@ -49,6 +49,7 @@ const INITIAL_STATE = {
         },
     ],
     menuOpen: false,
+    userRegister: [],
 };
 
 const cursosReducer = (state = INITIAL_STATE, action) => {
