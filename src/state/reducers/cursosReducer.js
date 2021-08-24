@@ -17,7 +17,7 @@ const INITIAL_STATE = {
         },
         {
             id: 3,
-            name: "desarrollo fullstak",
+            name: "desarrollo fullstack",
             img: imagenes[2],
             info: "Un programador Full Stack es un perfil híbrido entre el desarrollador Front End y Back End. Es un experto con conocimientos en diseño web, lenguajes de programación, base de datos, servidores, API's y Sistemas de Control de Versiones. Un desarrollador Full-Stack no necesariamente domina todas las tecnologías.",
         },
@@ -49,7 +49,74 @@ const INITIAL_STATE = {
         },
     ],
     menuOpen: false,
-    userRegister: [],
+    iconLogout: false,
+    users: [
+        {
+            idUser: 1,
+            email: "admin1@gmail.com",
+            pass: "admin12345",
+            data: {
+                name: "brayan muñoz",
+                ocu: "Administrador 1",
+            },
+            rol: 1,
+        },
+        {
+            idUser: 2,
+            email: "admin2@gmail.com",
+            pass: "admin12345",
+            data: {
+                name: "stiven quiroz",
+                ocu: "Administrador 2",
+            },
+            rol: 1,
+        },
+        {
+            nameFull: "camila morales",
+            user: "camimora",
+            pass: "user12345",
+            passReply: "user12345",
+            genero: "femenino",
+            format: "Comuna 3",
+            email: "user1@gmail.com",
+            dateBorn: "2021-08-07",
+            barrio: "maria cano carambolas",
+            dir: "carrera 23 # 91 b 84",
+            idUser: 1629771219094,
+            cursoInscripto: "desarrollo backend",
+            rol: 2,
+        },
+        {
+            nameFull: "felipe morales",
+            user: "felimora",
+            pass: "user12345",
+            passReply: "user12345",
+            genero: "masculino",
+            format: "Comuna 3",
+            email: "user2@gmail.com",
+            dateBorn: "2021-08-07",
+            barrio: "maria cano carambolas",
+            dir: "carrera 23 # 91 b 84",
+            idUser: 1629771219095,
+            cursoInscripto: "desarrollo frontend",
+            rol: 2,
+        },
+        {
+            nameFull: "valentina morales",
+            user: "valenmora",
+            pass: "user12345",
+            passReply: "user12345",
+            genero: "masculino",
+            format: "Comuna 3",
+            email: "user3@gmail.com",
+            dateBorn: "2021-08-07",
+            barrio: "maria cano carambolas",
+            dir: "carrera 23 # 91 b 84",
+            idUser: 1629771219096,
+            cursoInscripto: "desarrollo fullstack",
+            rol: 2,
+        },
+    ],
 };
 
 const cursosReducer = (state = INITIAL_STATE, action) => {
@@ -66,6 +133,18 @@ const cursosReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 menuOpen: !state.menuOpen,
+            };
+
+        case types.ADD_USER:
+            return {
+                ...state,
+                users: [...state.users, action.payload],
+            };
+
+        case types.SHOW_LOGOUT:
+            return {
+                ...state,
+                iconLogout: !state.iconLogout,
             };
 
         default:

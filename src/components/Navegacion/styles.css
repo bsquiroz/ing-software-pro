@@ -35,10 +35,19 @@
     color: #fff;
 }
 
+.box_icons {
+    display: none;
+}
+
 .icon {
-    margin-right: 1em;
+    margin: 0 1em;
     cursor: pointer;
     display: none;
+}
+
+.logout__icon {
+    padding-right: 1em;
+    cursor: pointer;
 }
 
 @media (max-width: 500px) {
@@ -67,5 +76,11 @@
 
     .icon {
         display: block;
+    }
+
+    .box_icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

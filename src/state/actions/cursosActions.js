@@ -2,6 +2,7 @@ export const types = {
     OBTENER_CURSO_ACTUAL: "OBTENER_CURSO_ACTUAL",
     OPEN_MENU: "OPEN_MENU",
     ADD_USER: "ADD_USER",
+    SHOW_LOGOUT: "SHOW_LOGOUT",
 };
 
 export const getCurrentCourse = (quote) => ({
@@ -16,4 +17,8 @@ export const openMenu = () => ({
 export const addUser = (user) => ({
     type: types.ADD_USER,
     payload: user,
+});
+
+export const showLogout = () => ({
+    type: types.SHOW_LOGOUT,
 });

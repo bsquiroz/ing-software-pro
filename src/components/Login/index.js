@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "./styles.css";
 
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
+import { showLogout } from "../../state/actions/cursosActions";
+
 const initial_values = {
     email: "",
     pass: "",
@@ -10,6 +15,12 @@ const initial_values = {
 export const Login = () => {
     const [values, setvalues] = useState(initial_values);
     const { email, pass } = values;
+    let bandera = 0;
+
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const users = useSelector((state) => state.cursos.users);
 
     const handleInputs = (e) => {
         setvalues({
@@ -29,11 +40,30 @@ export const Login = () => {
             });
         }
 
-        Swal.fire({
-            icon: "success",
-            title: "Muy bien",
-            text: "vas pa´entro",
+        users.forEach(async (user) => {
+            if (user.email === email && user.pass === pass && bandera === 0) {
+                bandera++;
+                const AlertConfirm = async () => {
+                    await Swal.fire({
+                        icon: "success",
+                        title: "Vas pa entro",
+                        text: "Como marrano estrenando lazo",
+                    });
+                };
+                await AlertConfirm();
+                dispatch(showLogout());
+                if (user.rol === 1) return history.push(`/adm/${user.idUser}`);
+                if (user.rol === 2) return history.push(`/user/${user.idUser}`);
+            }
         });
+
+        if (!bandera) {
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Credenciales incorrectas",
+            });
+        }
 
         setvalues(initial_values);
     };
@@ -52,14 +82,14 @@ export const Login = () => {
                             onChange={handleInputs}
                             value={email}
                         />
-                        <label htmlFor="name" className="form__label">
+                        <label htmlFor="email" className="form__label">
                             Correo
                         </label>
                         <span className="form__line"></span>
                     </div>
                     <div className="form__group">
                         <input
-                            type="text"
+                            type="password"
                             name="pass"
                             id="pass"
                             placeholder=" "
@@ -67,7 +97,7 @@ export const Login = () => {
                             onChange={handleInputs}
                             value={pass}
                         />
-                        <label htmlFor="name" className="form__label">
+                        <label htmlFor="pass" className="form__label">
                             Contraseña
                         </label>
                         <span className="form__line"></span>

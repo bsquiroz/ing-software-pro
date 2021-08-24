@@ -1,0 +1,74 @@
+.panel__adm h2 {
+    text-align: center;
+    color: var(--morado-claro);
+}
+
+.ocupacion {
+    position: absolute;
+    top: 5em;
+    left: 2em;
+    background-color: var(--morado-oscuro);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.card__user {
+    background-color: rgb(233, 248, 248);
+    margin-bottom: 1em;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    gap: 1em;
+    transition: box-shadow 0.5s;
+}
+
+.card__user:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    cursor: pointer;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.box__action {
+    display: flex;
+    gap: 1em;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-update {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+@media (max-width: 500px) {
+    .ocupacion {
+        position: static;
+        text-align: center;
+    }
+}

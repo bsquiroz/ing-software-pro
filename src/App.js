@@ -6,6 +6,8 @@ import { Inicio } from "./components/Inicio";
 import { Login } from "./components/Login";
 import { Navegacion } from "./components/Navegacion";
 import { Footer } from "./components/Footer";
+import { PanelAdm } from "./components/PanelAdm";
+import { PanelUser } from "./components/PanelUser";
 
 function App() {
     return (
@@ -23,6 +25,12 @@ function App() {
                 </Route>
                 <Route exact path="/cursos/:id">
                     <Formulario />
+                </Route>
+                <Route exact path="/adm/:id">
+                    <PanelAdm />
+                </Route>
+                <Route exact path="/user/:id">
+                    <PanelUser />
                 </Route>
             </Switch>
             <Footer />

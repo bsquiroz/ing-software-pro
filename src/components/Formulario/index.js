@@ -1,9 +1,11 @@
 import React from "react";
 import "./styles.css";
 import Swal from "sweetalert2";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+
+import { addUser } from "../../state/actions/cursosActions";
 
 const initial_values = {
     nameFull: "",
@@ -33,6 +35,7 @@ export const Formulario = () => {
     } = valuesInput;
     const [openForm, setOpenForm] = useState(false);
     const [currentCourse] = useSelector((state) => state.cursos.cursoActual);
+    const dispatch = useDispatch();
 
     const name = currentCourse.name;
     const alt = currentCourse.img.title;
@@ -99,11 +102,10 @@ export const Formulario = () => {
 
         valuesInput.idUser = Date.now();
         valuesInput.cursoInscripto = name;
+        valuesInput.rol = 2;
 
-        console.log(valuesInput);
-
+        dispatch(addUser(valuesInput));
         setvaluesInput(initial_values);
-
         history.push("/cursos");
     };
 

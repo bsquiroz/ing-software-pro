@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { Logout } from "../Logout";
 import { Link } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
 import closeIcon from "../../assets/icons/close.svg";
@@ -8,6 +9,8 @@ import { openMenu } from "../../state/actions/cursosActions";
 
 export const Navegacion = () => {
     const menu = useSelector((state) => state.cursos.menuOpen);
+    const logout = useSelector((state) => state.cursos.iconLogout);
+
     const dispatch = useDispatch();
 
     const handleMenu = () => {
@@ -29,15 +32,17 @@ export const Navegacion = () => {
                     <Link to="/cursos">Cursos</Link>
                 </li>
                 <li onClick={() => handleMenu()}>
-                    <Link to="/login">Login</Link>
+                    {logout ? <Logout /> : <Link to="/login">Login</Link>}
                 </li>
             </ul>
-            <div className="icon" onClick={() => handleMenu()}>
-                {menu ? (
-                    <img src={closeIcon} alt="close" />
-                ) : (
-                    <img src={menuIcon} alt="menu" />
-                )}
+            <div className="box_icons">
+                <div className="icon" onClick={() => handleMenu()}>
+                    {menu ? (
+                        <img src={closeIcon} alt="close" />
+                    ) : (
+                        <img src={menuIcon} alt="menu" />
+                    )}
+                </div>
             </div>
         </nav>
     );
