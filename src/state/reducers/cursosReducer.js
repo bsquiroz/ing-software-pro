@@ -124,6 +124,7 @@ const INITIAL_STATE = {
         },
     ],
     seccion: false,
+    darkMode:  false
 };
 
 const cursosReducer = (state = INITIAL_STATE, action) => {
@@ -159,6 +160,12 @@ const cursosReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 seccion: !state.seccion,
             };
+
+        case types.DARK_MODE: 
+            return {
+                ...state,
+                darkMode: !state.darkMode
+            }
 
         default:
             return state;

@@ -4,6 +4,7 @@ export const types = {
     ADD_USER: "ADD_USER",
     SHOW_LOGOUT: "SHOW_LOGOUT",
     LOGIN_USER: "LOGIN_USER",
+    DARK_MODE: "DARK_MODE"
 };
 
 export const getCurrentCourse = (quote) => ({
@@ -27,3 +28,7 @@ export const showLogout = () => ({
 export const loginUser = () => ({
     type: types.LOGIN_USER,
 });
+
+export const applyDarkMode = () => ({
+    type: types.DARK_MODE,
+})

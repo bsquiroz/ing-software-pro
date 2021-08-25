@@ -6,6 +6,7 @@ import menuIcon from "../../assets/icons/menu.svg";
 import closeIcon from "../../assets/icons/close.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { openMenu } from "../../state/actions/cursosActions";
+import {DarkMode} from '../darkMode'
 
 export const Navegacion = () => {
     const menu = useSelector((state) => state.cursos.menuOpen);
@@ -26,11 +27,17 @@ export const Navegacion = () => {
             </span>
             <ul className={handleShowMenu}>
                 {logout ? (
-                    <div onClick={() => handleMenu()}>
+                    <>
+                    <li>
+                        <DarkMode/>
+                    </li>
+                    <li onClick={() => handleMenu()}>
                         <Logout />
-                    </div>
+                    </li>
+                    </>
                 ) : (
                     <>
+                        <li><DarkMode/></li>
                         <li onClick={() => handleMenu()}>
                             <Link to="/">Inicio</Link>
                         </li>
