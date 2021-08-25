@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+
 .navegacion {
     height: 50px;
     background-color: var(--morado-oscuro);
@@ -17,6 +19,7 @@
 
 .logo a {
     color: #fff;
+    font-family: "Rampart One", cursive;
 }
 
 .menu {

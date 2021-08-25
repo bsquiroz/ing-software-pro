@@ -7,7 +7,9 @@ export const Inicio = () => {
         <section className="container">
             <div className="home">
                 <div className="home__text">
-                    <h2>Hola, bienvenido a __________</h2>
+                    <h2>
+                        Hola, bienvenido a <span className="slogan">MLB</span>
+                    </h2>
                     <br />
                     <div>
                         <h4>Es un placer para nosotros tenerte aqui</h4>
@@ -16,12 +18,7 @@ export const Inicio = () => {
                             cualquier lugar del mundo sin salir de casa
                         </p>
                         <br />
-                        <b>Solo debes contar con esto: </b>
-                        <ul>
-                            <li>Estar viviendo en medellin</li>
-                            <li>Contar con un rango de edad</li>
-                            <li>Ser estrato </li>
-                        </ul>
+                        <br />
                         <p>
                             <b>
                                 Recordar que solo puedes inscribirte a 2 cursos

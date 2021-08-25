@@ -29,8 +29,6 @@ export const PanelUser = () => {
 
     //Arrriba es la capa de extraccion de los datos
 
-    console.log(currentCourse);
-
     return (
         <div className="container">
             <div className="panel">
@@ -52,7 +50,7 @@ export const PanelUser = () => {
                 </div>
                 <div>
                     <span className="btn-confirm">
-                        Clic aqui para ver las clases
+                        Clic aqui para ver las {currentCourse.lessons} clases
                     </span>
                 </div>
             </div>

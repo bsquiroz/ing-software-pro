@@ -22,18 +22,26 @@ export const Navegacion = () => {
     return (
         <nav className="navegacion">
             <span className="logo">
-                <Link to="/">Logo</Link>
+                <Link to="/">MLB</Link>
             </span>
             <ul className={handleShowMenu}>
-                <li onClick={() => handleMenu()}>
-                    <Link to="/">Inicio</Link>
-                </li>
-                <li onClick={() => handleMenu()}>
-                    <Link to="/cursos">Cursos</Link>
-                </li>
-                <li onClick={() => handleMenu()}>
-                    {logout ? <Logout /> : <Link to="/login">Login</Link>}
-                </li>
+                {logout ? (
+                    <div onClick={() => handleMenu()}>
+                        <Logout />
+                    </div>
+                ) : (
+                    <>
+                        <li onClick={() => handleMenu()}>
+                            <Link to="/">Inicio</Link>
+                        </li>
+                        <li onClick={() => handleMenu()}>
+                            <Link to="/cursos">Cursos</Link>
+                        </li>
+                        <li onClick={() => handleMenu()}>
+                            <Link to="/login">Login</Link>
+                        </li>
+                    </>
+                )}
             </ul>
             <div className="box_icons">
                 <div className="icon" onClick={() => handleMenu()}>

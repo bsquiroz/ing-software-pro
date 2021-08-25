@@ -18,6 +18,7 @@ const initial_values = {
     dateBorn: "",
     barrio: "",
     dir: "",
+    cc: "",
 };
 
 export const Formulario = () => {
@@ -32,6 +33,7 @@ export const Formulario = () => {
         dateBorn,
         barrio,
         dir,
+        cc,
     } = valuesInput;
     const [openForm, setOpenForm] = useState(false);
     const [currentCourse] = useSelector((state) => state.cursos.cursoActual);
@@ -164,6 +166,21 @@ export const Formulario = () => {
                             />
                             <label htmlFor="dateBorn" className="form__label">
                                 Fecha de nacimiento
+                            </label>
+                            <span className="form__line"></span>
+                        </div>
+                        <div className="form__group">
+                            <input
+                                type="number"
+                                className="form__input"
+                                placeholder=" "
+                                id="cc"
+                                name="cc"
+                                onChange={handleInputs}
+                                value={cc}
+                            />
+                            <label htmlFor="cc" className="form__label">
+                                Cedula
                             </label>
                             <span className="form__line"></span>
                         </div>

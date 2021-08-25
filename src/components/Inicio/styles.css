@@ -1,3 +1,12 @@
+.slogan {
+    font-family: "Rampart One", cursive;
+    background-color: var(--morado-oscuro);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
 .home {
     display: flex;
     justify-content: center;
