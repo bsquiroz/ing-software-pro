@@ -5,7 +5,7 @@ import "./styles.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { showLogout } from "../../state/actions/cursosActions";
+import { showLogout, loginUser } from "../../state/actions/cursosActions";
 
 const initial_values = {
     email: "",
@@ -52,8 +52,14 @@ export const Login = () => {
                 };
                 await AlertConfirm();
                 dispatch(showLogout());
-                if (user.rol === 1) return history.push(`/adm/${user.idUser}`);
-                if (user.rol === 2) return history.push(`/user/${user.idUser}`);
+                if (user.rol === 1) {
+                    dispatch(loginUser());
+                    return history.push(`/adm/${user.idUser}`);
+                }
+                if (user.rol === 2) {
+                    dispatch(loginUser());
+                    return history.push(`/user/${user.idUser}`);
+                }
             }
         });
 

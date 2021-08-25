@@ -9,6 +9,9 @@ import { Footer } from "./components/Footer";
 import { PanelAdm } from "./components/PanelAdm";
 import { PanelUser } from "./components/PanelUser";
 
+// ruta protegida
+import { ProtectedRoute } from "./helpers/protectedRoute";
+
 function App() {
     return (
         <Router>
@@ -26,12 +29,12 @@ function App() {
                 <Route exact path="/cursos/:id">
                     <Formulario />
                 </Route>
-                <Route exact path="/adm/:id">
+                <ProtectedRoute exact path="/adm/:id">
                     <PanelAdm />
-                </Route>
-                <Route exact path="/user/:id">
+                </ProtectedRoute>
+                <ProtectedRoute exact path="/user/:id">
                     <PanelUser />
-                </Route>
+                </ProtectedRoute>
             </Switch>
             <Footer />
         </Router>

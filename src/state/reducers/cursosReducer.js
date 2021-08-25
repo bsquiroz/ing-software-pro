@@ -123,6 +123,7 @@ const INITIAL_STATE = {
             rol: 2,
         },
     ],
+    seccion: false,
 };
 
 const cursosReducer = (state = INITIAL_STATE, action) => {
@@ -151,6 +152,12 @@ const cursosReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 iconLogout: !state.iconLogout,
+            };
+
+        case types.LOGIN_USER:
+            return {
+                ...state,
+                seccion: !state.seccion,
             };
 
         default:

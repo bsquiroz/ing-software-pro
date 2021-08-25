@@ -3,6 +3,7 @@ export const types = {
     OPEN_MENU: "OPEN_MENU",
     ADD_USER: "ADD_USER",
     SHOW_LOGOUT: "SHOW_LOGOUT",
+    LOGIN_USER: "LOGIN_USER",
 };
 
 export const getCurrentCourse = (quote) => ({
@@ -21,4 +22,8 @@ export const addUser = (user) => ({
 
 export const showLogout = () => ({
     type: types.SHOW_LOGOUT,
+});
+
+export const loginUser = () => ({
+    type: types.LOGIN_USER,
 });

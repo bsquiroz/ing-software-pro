@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const PanelUser = () => {
+    //login del componente
     const users = useSelector((state) => state.cursos.users);
     const course = useSelector((state) => state.cursos.cursos);
 
