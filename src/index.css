@@ -5,6 +5,11 @@
     --morado-medio: #3e2c41;
     --morado-claro: #5c527f;
     --azul-claro: #6e85b2;
+
+    /* Variables para el theme color */
+    --font-color: #f4f4f4;
+    --primary-color: #323444;
+    --secondary-color: #242533;
 }
 
 * {
@@ -32,6 +37,25 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1em;
+}
+
+
+/* Themecolor */
+html[scheme='light-mode'] {
+    --font-color: #444444;
+    --primary-color: #cccccc;
+    --secondary-color: #b5b5b5;
+}
+
+html[scheme='dark-mode'] {
+    --font-color: #f4f4f4;
+    --primary-color: #323444;
+    --secondary-color: #242533;
+}
+
+html {
+    background-color: var(--font-color);
+    color: var(--primary-color);
 }
 
 @media (max-width: 500px) {

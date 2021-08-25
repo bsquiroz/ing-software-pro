@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useEffect, useRef } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
+import {scrollReveal} from '../../helpers/scrollReveals'
 
 export const Inicio = () => {
+    const inicioRef = useRef(null)
+    
+    useEffect(() => {
+        scrollReveal({
+			component: inicioRef.current,
+			direction: 'top',
+			time: 900
+		})
+    }, [])
     return (
-        <section className="container">
+        <section ref={inicioRef}  className="container">
             <div className="home">
                 <div className="home__text">
                     <h2>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./styles.css"
 
 import { useSelector, useDispatch } from "react-redux";
@@ -11,6 +11,18 @@ export const DarkMode = () => {
     const handleDarkMode = () => {
         dispatch(applyDarkMode())
     }
+
+
+    useEffect(() => {
+        if (stateDarkMode) {
+            document.querySelector('html').removeAttribute('scheme')
+            document.querySelector('html').setAttribute('scheme', 'dark-mode')
+        } else {
+            document.querySelector('html').removeAttribute('scheme')
+            document.querySelector('html').setAttribute('scheme', 'light-mode')
+        }
+    }, [stateDarkMode])
+
 
     const IconTheme = stateDarkMode ? <span>Dark</span> : <span>Light</span>
     
