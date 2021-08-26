@@ -28,7 +28,7 @@ export const Navegacion = () => {
             <ul className={handleShowMenu}>
                 {logout ? (
                     <>
-                    <li>
+                    <li onClick={() => handleMenu()}>
                         <DarkMode/>
                     </li>
                     <li onClick={() => handleMenu()}>
@@ -37,7 +37,7 @@ export const Navegacion = () => {
                     </>
                 ) : (
                     <>
-                        <li><DarkMode/></li>
+                        <li onClick={() => handleMenu()}><DarkMode/></li>
                         <li onClick={() => handleMenu()}>
                             <Link to="/">Inicio</Link>
                         </li>
