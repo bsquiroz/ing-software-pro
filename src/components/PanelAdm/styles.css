@@ -16,7 +16,9 @@
     flex-direction: column;
     padding: 1em;
 }
-
+.ocupacion  a {
+    color: #fff;
+}
 .btn-expo {
     margin: 1em 0;
     background-color: var(--morado-claro);

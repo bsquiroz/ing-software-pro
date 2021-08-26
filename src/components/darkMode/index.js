@@ -25,7 +25,7 @@ export const DarkMode = () => {
     const IconTheme = stateDarkMode ? <span>☀️</span> : <span>🌑</span>;
 
     return (
-        <div onClick={handleDarkMode} class="darkMode">
+        <div onClick={handleDarkMode} className="darkMode">
             {IconTheme}
         </div>
     );

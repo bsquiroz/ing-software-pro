@@ -7,6 +7,8 @@ import { useState } from "react";
 import { imagenes_filtradas } from "../../helpers/filters_img";
 import { scrollReveal } from "../../helpers/scrollReveals";
 
+import inf from '../../assets/doc/inf.xlsx'
+
 export const PanelAdm = () => {
     const panelAdminRef = useRef(null);
 
@@ -151,8 +153,8 @@ export const PanelAdm = () => {
             <div className="panel__adm">
                 <div className="ocupacion">
                     <span>{persona}</span>
-                    <span className="btn btn-expo">Exportar información</span>
-                    <span className="btn btn-expo">Leer documentación</span>
+                    <a download="" href={inf} className="btn btn-expo">Exportar información</a>
+                    <a href="https://es.reactjs.org/" target="_blank" rel="noreferrer" className="btn btn-expo">Leer documentación</a>
                 </div>
                 <h2>Panel de administrador</h2>
                 <br />
