@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Swal from "sweetalert2";
 import "./styles.css";
 
@@ -7,12 +7,15 @@ import { useHistory } from "react-router-dom";
 
 import { showLogout, loginUser } from "../../state/actions/cursosActions";
 
+import { scrollReveal } from "../../helpers/scrollReveals";
+
 const initial_values = {
     email: "",
     pass: "",
 };
 
 export const Login = () => {
+    const loginRef = useRef(null);
     const [values, setvalues] = useState(initial_values);
     const { email, pass } = values;
     let bandera = 0;
@@ -73,8 +76,17 @@ export const Login = () => {
 
         setvalues(initial_values);
     };
+
+    useEffect(() => {
+        scrollReveal({
+            component: loginRef.current,
+            direction: "right",
+            time: 900,
+        });
+    }, []);
+
     return (
-        <section className="container">
+        <section ref={loginRef} id="login" className="container">
             <div className="login">
                 <h2>Ingresa con tus datos</h2>
                 <form className="form__container" onSubmit={handleSubmit}>

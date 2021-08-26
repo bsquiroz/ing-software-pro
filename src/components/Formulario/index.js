@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./styles.css";
 import Swal from "sweetalert2";
 import { useSelector, useDispatch } from "react-redux";
@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { addUser } from "../../state/actions/cursosActions";
+import { scrollReveal } from "../../helpers/scrollReveals";
 
 const initial_values = {
     nameFull: "",
@@ -22,6 +23,8 @@ const initial_values = {
 };
 
 export const Formulario = () => {
+    const formularioRef = useRef(null);
+
     const [valuesInput, setvaluesInput] = useState(initial_values);
     const {
         nameFull,
@@ -111,8 +114,16 @@ export const Formulario = () => {
         history.push("/cursos");
     };
 
+    useEffect(() => {
+        scrollReveal({
+            component: formularioRef.current,
+            direction: "bottom",
+            time: 900,
+        });
+    }, []);
+
     return (
-        <div className="container">
+        <div ref={formularioRef} id="formulario" className="container">
             <div className="formulario">
                 <div className="formulario__title">
                     <h2>

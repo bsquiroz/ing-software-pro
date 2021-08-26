@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./styles.css";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import { scrollReveal } from "../../helpers/scrollReveals";
+
 export const PanelUser = () => {
+    const panelUserRef = useRef(null);
+
+    useEffect(() => {
+        scrollReveal({
+            component: panelUserRef.current,
+            direction: "bottom",
+            time: 900,
+        });
+    }, []);
+
     //login del componente
     const users = useSelector((state) => state.cursos.users);
     const course = useSelector((state) => state.cursos.cursos);
@@ -31,7 +43,7 @@ export const PanelUser = () => {
     //Arrriba es la capa de extraccion de los datos
 
     return (
-        <div className="container">
+        <div ref={panelUserRef} id="panelUserRef" className="container">
             <div className="panel">
                 <h2 className="title">
                     Hola, <span>{nameFull}</span>, espero estes muy bien

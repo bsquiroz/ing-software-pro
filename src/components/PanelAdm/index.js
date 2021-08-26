@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./styles.css";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
 import { imagenes_filtradas } from "../../helpers/filters_img";
+import { scrollReveal } from "../../helpers/scrollReveals";
 
 export const PanelAdm = () => {
+    const panelAdminRef = useRef(null);
+
+    useEffect(() => {
+        scrollReveal({
+            component: panelAdminRef.current,
+            direction: "top",
+            time: 900,
+        });
+    }, []);
+
     // logica para obtener los datos
     const users = useSelector((state) => state.cursos.users);
     const cousers = useSelector((state) => state.cursos.cursos);
@@ -136,7 +147,7 @@ export const PanelAdm = () => {
     );
 
     return (
-        <div className="container">
+        <div ref={panelAdminRef} id="panelAdmin" className="container">
             <div className="panel__adm">
                 <div className="ocupacion">
                     <span>{persona}</span>

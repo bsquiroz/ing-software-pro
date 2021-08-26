@@ -1,35 +1,32 @@
-import React, {useEffect} from 'react'
-import "./styles.css"
+import React, { useEffect } from "react";
+import "./styles.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import {applyDarkMode} from '../../state/actions/cursosActions'
+import { applyDarkMode } from "../../state/actions/cursosActions";
 
 export const DarkMode = () => {
     const stateDarkMode = useSelector((state) => state.cursos.darkMode);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const handleDarkMode = () => {
-        dispatch(applyDarkMode())
-    }
-
+        dispatch(applyDarkMode());
+    };
 
     useEffect(() => {
-        if (stateDarkMode) {
-            document.querySelector('html').removeAttribute('scheme')
-            document.querySelector('html').setAttribute('scheme', 'dark-mode')
+        if (!stateDarkMode) {
+            document.querySelector("html").removeAttribute("scheme");
+            document.querySelector("html").setAttribute("scheme", "dark-mode");
         } else {
-            document.querySelector('html').removeAttribute('scheme')
-            document.querySelector('html').setAttribute('scheme', 'light-mode')
+            document.querySelector("html").removeAttribute("scheme");
+            document.querySelector("html").setAttribute("scheme", "light-mode");
         }
-    }, [stateDarkMode])
+    }, [stateDarkMode]);
 
+    const IconTheme = stateDarkMode ? <span>☀️</span> : <span>🌑</span>;
 
-    const IconTheme = stateDarkMode ? <span>Dark</span> : <span>Light</span>
-    
     return (
         <div onClick={handleDarkMode} class="darkMode">
             {IconTheme}
         </div>
-    )
-}
-
+    );
+};
