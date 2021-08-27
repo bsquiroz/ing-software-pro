@@ -66,7 +66,7 @@
 .login .form__btn {
     outline: none;
     border: none;
-    background-color: var(--morado-claro);
+    background-color: #5c527f;
     padding: 1em 0;
     border-radius: 10px;
     color: #fff;

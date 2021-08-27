@@ -135,10 +135,10 @@
 
 .label__radio {
     position: relative;
-    color: var(--morado-claro);
+    color: var(--color-radio);
     font-family: sans-serif;
     font-size: 16px;
-    border: 2px solid var(--morado-claro);
+    border: 2px solid var(--color-radio);
     border-radius: 5px;
     padding: 10px 20px;
     display: flex;
@@ -151,13 +151,13 @@
     content: "";
     height: 16px;
     width: 16px;
-    border: 3px solid var(--morado-claro);
+    border: 3px solid var(--color-radio);
     border-radius: 50%;
     margin-right: 20px;
 }
 
 .input__radio[type="radio"]:checked + .label__radio {
-    background-color: var(--morado-claro);
+    background-color: #5c527f;
     color: #fff;
 }
 
@@ -165,7 +165,7 @@
     height: 16px;
     width: 16px;
     border: 3px solid #fff;
-    background-color: var(--morado-claro);
+    background-color: #5c527f;
 }
 
 /* Estilos de select */
@@ -177,7 +177,7 @@ select {
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: var(--morado-claro);
+    background: #5c527f;
     background-image: none;
     flex: 1;
     padding: 0 0.5em;
@@ -195,7 +195,7 @@ select::-ms-expand {
     width: 20em;
     height: 3em;
     line-height: 3;
-    background: var(--morado-claro);
+    background: #5c527f;
     overflow: hidden;
     border-radius: 0.25em;
 }
@@ -205,13 +205,13 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: var(--morado-claro);
+    background: #5c527f;
     cursor: pointer;
     pointer-events: none;
     transition: 0.25s all ease;
 }
 .select:hover::after {
-    color: var(--morado-claro);
+    color: #5c527f;
 }
 
 option:disabled {

@@ -40,16 +40,24 @@ body {
 }
 
 /* Themecolor */
-html[scheme="light-mode"] {
-    --font-color: #444444;
-    --primary-color: #cccccc;
-    --secondary-color: #b5b5b5;
-}
 
 html[scheme="dark-mode"] {
+    --font-color: #444444;
+    --primary-color: #ccc;
+    --secondary-color: #b5b5b5;
+    --morado-claro: #fff;
+    --morado-claro-bg: #5c527f;
+    --morado-claro-color: #5c527f;
+    --color-radio: #ccc;
+    --filter-box: #313131;
+}
+
+html[scheme="light-mode"] {
     --font-color: #f4f4f4;
     --primary-color: #323444;
     --secondary-color: #242533;
+    --color-radio: #5c527f;
+    --filter-box: rgb(231, 228, 255);
 }
 
 html {

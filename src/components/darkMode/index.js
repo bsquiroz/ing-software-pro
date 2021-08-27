@@ -15,10 +15,10 @@ export const DarkMode = () => {
     useEffect(() => {
         if (!stateDarkMode) {
             document.querySelector("html").removeAttribute("scheme");
-            document.querySelector("html").setAttribute("scheme", "dark-mode");
+            document.querySelector("html").setAttribute("scheme", "light-mode");
         } else {
             document.querySelector("html").removeAttribute("scheme");
-            document.querySelector("html").setAttribute("scheme", "light-mode");
+            document.querySelector("html").setAttribute("scheme", "dark-mode");
         }
     }, [stateDarkMode]);
 

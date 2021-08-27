@@ -3,6 +3,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--morado-claro);
+    background-color: #5c527f;
     color: #fff;
 }

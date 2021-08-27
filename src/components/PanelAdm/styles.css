@@ -1,6 +1,10 @@
+:root {
+    --bg: #5c527f;
+}
+
 .panel__adm h2 {
     text-align: center;
-    color: var(--morado-claro);
+    color: var(--bg);
 }
 
 .ocupacion {
@@ -16,16 +20,16 @@
     flex-direction: column;
     padding: 1em;
 }
-.ocupacion  a {
+.ocupacion a {
     color: #fff;
 }
 .btn-expo {
     margin: 1em 0;
-    background-color: var(--morado-claro);
+    background-color: var(--bg);
 }
 
 .card__user {
-    background-color: rgb(233, 248, 248);
+    background-color: var(--filter-box);
     margin-bottom: 1em;
     padding: 1em;
     display: flex;
@@ -53,7 +57,7 @@
 }
 
 .btn__showUser {
-    background-color: var(--morado-claro);
+    background-color: var(--bg);
     color: #fff;
     margin-bottom: 1em;
 }
@@ -103,7 +107,7 @@ select {
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: var(--morado-claro);
+    background: #5c527f;
     background-image: none;
     flex: 1;
     padding: 0 0.5em;
@@ -121,7 +125,7 @@ select::-ms-expand {
     width: 20em;
     height: 3em;
     line-height: 3;
-    background: var(--morado-claro);
+    background: #5c527f;
     overflow: hidden;
     border-radius: 0.25em;
 }
@@ -131,13 +135,13 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: var(--morado-claro);
+    background: #5c527f;
     cursor: pointer;
     pointer-events: none;
     transition: 0.25s all ease;
 }
 .select:hover::after {
-    color: var(--morado-claro);
+    color: #5c527f;
 }
 
 option:disabled {
